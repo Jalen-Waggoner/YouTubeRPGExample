@@ -32,13 +32,17 @@ public class ProgramUI {
     string selection = Console.ReadLine();
     if (selection == "1"){
     
-    Console.WriteLine("Uncertain yet determined, you tighten your gui, strap a Power Pull to your side," + 
+    Console.WriteLine("Uncertain yet determined, you tighten your gi, strap a Power Pole to your side," + 
     "and set your dreads in place before speeding down the hill towards your quarry.");
     } 
     else if (selection == "2") {
         Console.WriteLine("You fall flat on your back, stretch out your arms and then weave your fingers behind your head. Slowly drifting back to sleep wearing a grin from ear to ear.");
         Console.ReadKey();
         Console.WriteLine("Whatever it was at the bottom of the hill couldn't have been THAT important...");
+        Console.ReadKey();
+        System.Console.WriteLine("All of a sudden, you hear a CRASH coming from the direction of the anomoly!");
+        Console.ReadKey();
+        System.Console.WriteLine("Frustrated, you exclaim \"I can't sleep with all that ruckus!\" and you reluctantly get up with a yawn to investigate further.");
     } 
     else {
         Console.WriteLine("Please input a valid option.");
@@ -96,12 +100,13 @@ public class ProgramUI {
             while (h > 0 ) {
                 Console.Clear();
                 Console.WriteLine(n);
-                Console.WriteLine("ATK: " + p + "/" + "HP: " + h);
+                Console.WriteLine("ATK: " + p + "/" + " HP: " + h);
                 Console.WriteLine("===================");
                 Console.WriteLine("|(A)ttack (D)efend|");
                 Console.WriteLine("| (H)eal   (R)un  |");
                 Console.WriteLine("===================");
                 Console.WriteLine($" Potions: {ProgramUI.currentPlayer.potion}  Health: {ProgramUI.currentPlayer.health}");
+                System.Console.WriteLine("(E)xit");
 
                 
                 string input = Console.ReadLine();
@@ -114,7 +119,7 @@ public class ProgramUI {
                     damage = 0;} 
                     int attack = rand.Next(0, ProgramUI.currentPlayer.weaponValue) + rand.Next(1,4);
                     
-                    Console.WriteLine($"You swipe horizontally with your Power Pull! Delivering a staggering blow that deals {damage}");
+                    Console.WriteLine($"You swipe horizontally with your Power Pole! Delivering a staggering blow that deals {damage}");
                     Console.WriteLine($"{n} follows up with their own attack!    You lose {damage} health");
                     ProgramUI.currentPlayer.health -= damage;
                     h -= attack;
