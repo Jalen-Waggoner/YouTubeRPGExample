@@ -40,7 +40,7 @@ public class ProgramUI {
         Console.ReadKey();
         Console.WriteLine("Whatever it was at the bottom of the hill couldn't have been THAT important...");
         Console.ReadKey();
-        System.Console.WriteLine("All of a sudden, you hear a CRASH coming from the direction of the anomoly!");
+        System.Console.WriteLine("All of a sudden, you hear a CRASH coming from the direction of the anomaly!");
         Console.ReadKey();
         System.Console.WriteLine("Frustrated, you exclaim \"I can't sleep with all that ruckus!\" and you reluctantly get up with a yawn to investigate further.");
     } 
