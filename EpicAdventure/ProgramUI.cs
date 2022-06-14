@@ -96,14 +96,16 @@ public class ProgramUI {
             while (h > 0 ) {
                 Console.Clear();
                 Console.WriteLine(n);
-                Console.WriteLine(p + "/" + h);
+                Console.WriteLine("ATK: " + p + "/" + "HP: " + h);
                 Console.WriteLine("===================");
                 Console.WriteLine("|(A)ttack (D)efend|");
-                Console.WriteLine("|     (H)eal      |");
+                Console.WriteLine("| (H)eal   (R)un  |");
                 Console.WriteLine("===================");
                 Console.WriteLine($" Potions: {ProgramUI.currentPlayer.potion}  Health: {ProgramUI.currentPlayer.health}");
+
                 
                 string input = Console.ReadLine();
+
                 if(input.ToLower() == "a" || input.ToLower() == "attack"){
                     
                     //Attack
@@ -129,6 +131,10 @@ public class ProgramUI {
                     ProgramUI.currentPlayer.health -= damage;
                     h -= attack;
                 }
+                else if(input.ToLower() == "E" || input.ToLower() == "Exit"){
+                    //Exit
+                    h = 0;
+                }
                 
                 else if(input.ToLower() == "h" || input.ToLower() == "heal"){
                     //Heal
@@ -147,9 +153,22 @@ public class ProgramUI {
                         int damage = (p / 2) - ProgramUI.currentPlayer.armorValue;
                         if (damage < 0 ) {
                             damage = 0;}
+                        ProgramUI.currentPlayer.potion -= 1;
                         Console.WriteLine($"You loose {damage} health");
                         }
                     }
+                else if(input.ToLower() == "r" || input.ToLower() == "run"){
+
+                    //Run
+                    int damage = (p*10) - ProgramUI.currentPlayer.armorValue;
+                    if (damage < 0){
+                        damage = 0;}
+
+                        System.Console.WriteLine("You try to run from combat, but are thwarted in your attempt!");
+                        System.Console.WriteLine("\"You can't run from me!\"");
+                        System.Console.WriteLine($"You've taken {damage} damage!");
+                        ProgramUI.currentPlayer.health -= damage;
+                }
                 Console.ReadKey();
                 }
             }
